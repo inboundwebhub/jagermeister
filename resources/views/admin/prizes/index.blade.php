@@ -108,7 +108,9 @@ button[type="submit"]:hover {
                                     <input type="file" id="file-upload" name="file" class="@error('file') is-invalid @enderror">
                                 </label>
                                 @error('file')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                             @php
+                                 toastr()->error($message)
+                             @endphp   
                                 @enderror
                                 <br>
                                 <button type="submit">Submit</button>

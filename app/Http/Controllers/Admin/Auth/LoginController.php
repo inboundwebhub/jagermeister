@@ -44,6 +44,7 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($request->only('email', 'password'))) {
+            toastr()->success('login successfully');
             return redirect()->route('admin.dashboard');
         }
         toastr()->error('The provided credentials do not match our records');

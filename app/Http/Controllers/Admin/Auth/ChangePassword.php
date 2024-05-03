@@ -37,9 +37,12 @@ class ChangePassword extends Controller
             $existingUser->update([
                 'password' => $attributes['password']
             ]);
+            toastr()->success('password changed successfully');
+
             return redirect('login');
         } else {
             toastr()->error('Your email does not match the email who requested the password change');
-            return back();        }
+            return back();      
+          }
     }
 }

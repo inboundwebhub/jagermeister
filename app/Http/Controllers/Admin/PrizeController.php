@@ -66,6 +66,7 @@ class PrizeController extends Controller
     public function export()
     {
         //  dd(request()->all());
+        toastr()->success('exported successfully');
         return Excel::download(new PrizesExport, 'prizes.xlsx');
         // return back();
     }
@@ -81,6 +82,7 @@ class PrizeController extends Controller
         ]);
 
         Excel::import(new PrizesImport, $request->file('file'));
+        toastr()->success('imported successfully');
         return back();
     }
     public function destroy(string $id)

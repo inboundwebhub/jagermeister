@@ -27,8 +27,9 @@ class RegisterController extends Controller
             // Assuming you have an $user variable for the user being registered
             $user->addMediaFromRequest('avatar')->toMediaCollection('avatar');
         }
-    
+
         auth()->login($user);
+        toastr()->success('sign in successfully');
     
         return redirect('/admin/dashboard');
     }

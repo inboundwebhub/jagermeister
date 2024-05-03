@@ -77,9 +77,10 @@ class PrizeController extends Controller
             'file' => [
                 'required',
                 'file', // Ensure it's a file
-                'mimetypes:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // Ensure it's an xlsx file
+                'mimetypes:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv', // XLSX and CSV
             ],
         ]);
+        
 
         Excel::import(new PrizesImport, $request->file('file'));
         toastr()->success('imported successfully');

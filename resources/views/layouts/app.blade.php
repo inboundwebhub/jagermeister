@@ -22,7 +22,8 @@
         @yield('content')
     </div> <!-- end container-fluid -->
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"  referrerpolicy="no-referrer"></script>
+<script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"  referrerpolicy="no-referrer"></script>
+<script src="{{ asset('assets/js/jquery.validate.min.js') }}"  referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
  @stack('script-lib')
 @yield('js')

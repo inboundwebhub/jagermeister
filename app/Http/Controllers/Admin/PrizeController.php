@@ -1,14 +1,16 @@
 <?php
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\prize;
+use App\Models\Prize;
+use App\Exports\PrizesExport;
+use App\Imports\PrizesImport;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\User;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\File;
 
 class PrizeController extends Controller
 {
@@ -21,7 +23,7 @@ class PrizeController extends Controller
         $this->middleware('permission:delete-prize', ['only' => ['destroy']]);
     }
 
-    public function index() 
+    public function index()
     {
         $data = prize::all();
         // dd($data);
@@ -39,7 +41,7 @@ class PrizeController extends Controller
 
     public function update(Request $request, string $id)
     {
-    // dd($request);
+        // dd($request);
 
         // Validate the request
         $validatedData = $request->validate([
@@ -48,29 +50,47 @@ class PrizeController extends Controller
             'assigned' => 'nullable', // Ensure it's boolean
             'confirmed' => 'nullable', // Ensure it's boolean
         ]);
-        
+
         // Find the prize by ID
         $prize = Prize::findOrFail($id);
-        
+
         // Update prize details
         $prize->prize_type = $request->prize_type;
         $prize->prize_number = $request->prize_number;
         $prize->assigned = $request->assigned; // Use lowercase
         $prize->confirmed = $request->confirmed; // Use lowercase
         $prize->save();
-        
-        // Redirect to a view or route after updating the prize
-        return redirect()->route('admin.prizes.index')->with('success', 'Prize updated successfully');
+        toastr()->success('Prize updated successfully');
+        return redirect()->route('admin.prizes.index');
+    }
+    public function export()
+    {
+        //  dd(request()->all());
+        return Excel::download(new PrizesExport, 'prizes.xlsx');
+        // return back();
     }
 
+    public function import(Request $request)
+    {
+        $attributes = $request->validate([
+            'file' => [
+                'required',
+                'file', // Ensure it's a file
+                'mimetypes:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // Ensure it's an xlsx file
+            ],
+        ]);
+
+        Excel::import(new PrizesImport, $request->file('file'));
+        return back();
+    }
     public function destroy(string $id)
     {
         $Prize = Prize::find($id);
 
         $Prize->delete();
-
+        toastr()->success('prize deleted successfully');
+        return redirect()->route('admin.prizes.index');
         // Return success response
-        return redirect()->route('admin.prizes.index')->with('success', 'prize deleted successfully');
+        // return redirect()->route('admin.prizes.index')->with('success', 'prize deleted successfully');
     }
-    
 }

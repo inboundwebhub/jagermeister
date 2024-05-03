@@ -58,10 +58,9 @@ class UserController extends Controller
         $user->tshirt_size = $request->tshirt_size;
         $user->save();
 
+        toastr()->success('User updated successfully');
+        return redirect()->route('users.index');
       
-      
-        return redirect()->route('users.index')
-            ->with('success', 'User updated successfully');
     }
 
     /**
@@ -73,9 +72,12 @@ class UserController extends Controller
     
         if (!$user->hasRole('admin')) {
             $user->delete();
-            return redirect()->route('users.index')->with('success', 'User deleted successfully');
+            toastr()->success('User deleted successfully');
+            return redirect()->route('users.index');
+            // return redirect()->route('users.index')->with('success', 'User deleted successfully');
         } else {
-            return redirect()->route('users.index')->with('error', 'Admin users cannot be deleted');
+            toastr()->error('Admin users cannot be deleted');
+            return redirect()->route('users.index');
         }
     }
     

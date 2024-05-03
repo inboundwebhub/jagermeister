@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    @include('admin.layouts.navbars.auth.topnav', ['title' => 'Prizes'])
+    @include('admin.layouts.navbars.auth.topnav', ['title' => 'live_Prize'])
     <div class="row mt-4 mx-4">
         <div class="col-xxl-15">
             <div id="alert">
@@ -45,7 +45,7 @@
 
                                         <div class="d-flex align-items-center justify-content-center text-center px-3 py-1">
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">{{ $prize->prize_id }}</h6>
+                                                <h6 class="mb-0 text-sm">{{ $prize->id }}</h6>
                                             </div>
                                         </div>
                                     </td>

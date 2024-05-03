@@ -59,7 +59,7 @@ class UserController extends Controller
         $user->save();
 
         toastr()->success('User updated successfully');
-        return redirect()->route('users.index');
+        return redirect()->route('admin.users.index');
       
     }
 
@@ -77,7 +77,7 @@ class UserController extends Controller
             // return redirect()->route('users.index')->with('success', 'User deleted successfully');
         } else {
             toastr()->error('Admin users cannot be deleted');
-            return redirect()->route('users.index');
+            return redirect()->route('admin.users.index');
         }
     }
     

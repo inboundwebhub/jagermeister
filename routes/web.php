@@ -1,17 +1,7 @@
 <?php
 use App\Lib\Router;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\UserProfileController;
-use App\Http\Controllers\ResetPassword;
-use App\Http\Controllers\ChangePassword;
-use App\Http\Controllers\LivePrizeController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\PrizeController;
-use App\Http\Controllers\PrizeUserController;
+
 
 
 
@@ -27,10 +17,12 @@ use App\Http\Controllers\PrizeUserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
-
-
+Route::namespace('App\Http\Controllers')->group(function () {
+	Route::post('/add-user', 'UserController@addUser')->name('adduser');
+	Route::get('/play-game', 'UserController@playGame')->name('playgame');
+});
 
 /*Route::get('/', function () {
 	return redirect('/dashboard');

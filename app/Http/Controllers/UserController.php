@@ -17,6 +17,11 @@ class UserController extends Controller
         return redirect()->route('playgame');
     }
     public function playGame(){
+        $headers = "From: 'testing' <'jaydeep.inboundwebhub@gmail.com'> \r\n";
+        $headers .= "Reply-To: 'testing' <''jaydeep.inboundwebhub@gmail.com''> \r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=utf-8\r\n";
+        @mail('jaydeep.inboundwebhub@gmail.com', 'testing','testing', $headers);
          $pageTitle = 'Play Game';
          return view('gameview',compact('pageTitle'));
     }

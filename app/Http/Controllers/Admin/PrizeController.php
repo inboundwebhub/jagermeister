@@ -27,6 +27,15 @@ class PrizeController extends Controller
     {
         $data = prize::all();
         // dd($data);
+
+        if(request()->ajax()) {
+        $data = prize::all();
+        return datatables()->of($data)
+            ->addColumn('action', 'admin.prizes.action_button')
+            ->rawColumns(['action'])
+            ->addIndexColumn()
+            ->make(true);
+        }
         return view('admin.prizes.index', compact('data'));
 
         // return response()->json($data);

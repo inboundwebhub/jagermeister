@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="baseUrl" data-url="{{ url('/') }}"  id="baseUrl"/>
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/admin/images/apple-icon.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('assets/admin/images/favicon.png') }}">
     <title>
@@ -63,6 +64,7 @@
     </script>
     <script src="{{ asset('assets/admin/js/dataTables.min.js') }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
        
-     @stack('js');
+    @stack('js');
+    @yield('js');
 </body>
 </html>

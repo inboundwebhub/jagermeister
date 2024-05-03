@@ -10,9 +10,9 @@ class LivePrizeController extends Controller
 {
     public function index()
     {
-        LivePrize::truncate();
+        // LivePrize::truncate();
 
-        $prizes = Prize::whereNotNull('id')
+        $livePrizes = Prize::whereNotNull('id')
             ->whereNotNull('prize_number')
             ->whereNotNull('prize_type')
             ->get();
@@ -20,19 +20,19 @@ class LivePrizeController extends Controller
         // dd($prizes);
 
         // Insert fetched entries into live_prizes table
-        foreach ($prizes as $prize) {
-            // Create live prize only if all fields are present
-            LivePrize::updateOrCreate(
-                ['prize_id' => $prize->id], // Here 'prize_id' is the column name in the 'LivePrize' table
-                [
-                    'prize_number' => $prize->prize_number,
-                    'prize_type' => $prize->prize_type,
-                ]
-            );
-        }
+        // foreach ($prizes as $prize) {
+        //     // Create live prize only if all fields are present
+        //     LivePrize::updateOrCreate(
+        //         ['prize_id' => $prize->id], // Here 'prize_id' is the column name in the 'LivePrize' table
+        //         [
+        //             'prize_number' => $prize->prize_number,
+        //             'prize_type' => $prize->prize_type,
+        //         ]
+        //     );
+        // }
 
-        // Fetch synchronized prizes
-        $livePrizes = LivePrize::all();
+        // // Fetch synchronized prizes
+        // $livePrizes = LivePrize::all();
 
         // dd($livePrizes);
 

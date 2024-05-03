@@ -51,4 +51,9 @@ class User extends Authenticatable
     * @return string
     */
   
+    public function prize()
+    {
+        return $this->belongsTo(Prize::class, 'prize_id');
+    }
+    
 }

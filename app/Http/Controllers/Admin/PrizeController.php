@@ -28,13 +28,13 @@ class PrizeController extends Controller
         $data = prize::all();
         // dd($data);
 
-        if(request()->ajax()) {
-        $data = prize::all();
-        return datatables()->of($data)
-            ->addColumn('action', 'admin.prizes.action_button')
-            ->rawColumns(['action'])
-            ->addIndexColumn()
-            ->make(true);
+        if (request()->ajax()) {
+            $data = prize::all();
+            return datatables()->of($data)
+                ->addColumn('action', 'admin.prizes.action_button')
+                ->rawColumns(['action'])
+                ->addIndexColumn()
+                ->make(true);
         }
         return view('admin.prizes.index', compact('data'));
 
@@ -89,7 +89,7 @@ class PrizeController extends Controller
                 'mimetypes:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv', // XLSX and CSV
             ],
         ]);
-        
+
 
         Excel::import(new PrizesImport, $request->file('file'));
         toastr()->success('imported successfully');

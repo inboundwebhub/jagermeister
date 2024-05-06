@@ -70,8 +70,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">Username</label>
-                                        <input class="form-control" type="text" name="username" value="{{ old('username', auth()->user()->username) }}">
+                                        <label for="example-text-input" class="form-control-label">name</label>
+                                        <input class="form-control" type="text" name="username" value="{{ old('name', auth()->user()->name) }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -80,7 +80,7 @@
                                         <input class="form-control" type="email" name="email" value="{{ old('email', auth()->user()->email) }}">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">First name</label>
                                         <input class="form-control" type="text" name="firstname"  value="{{ old('firstname', auth()->user()->firstname) }}">
@@ -91,7 +91,7 @@
                                         <label for="example-text-input" class="form-control-label">Last name</label>
                                         <input class="form-control" type="text" name="lastname" value="{{ old('lastname', auth()->user()->lastname) }}">
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <hr class="horizontal dark">
                             <p class="text-uppercase text-sm">Contact Information</p>
@@ -103,7 +103,7 @@
                                             value="{{ old('address', auth()->user()->address) }}">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                {{-- <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">City</label>
                                         <input class="form-control" type="text" name="city" value="{{ old('city', auth()->user()->city) }}">
@@ -120,7 +120,7 @@
                                         <label for="example-text-input" class="form-control-label">Postal code</label>
                                         <input class="form-control" type="text" name="postal" value="{{ old('postal', auth()->user()->postal) }}">
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                           
                         </div>

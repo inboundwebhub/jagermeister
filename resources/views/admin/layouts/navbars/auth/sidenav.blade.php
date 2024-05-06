@@ -96,7 +96,7 @@
                 </a>
             </li> 
          
-            <li class="nav-item mt-3">
+            {{-- <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
             </li>
            
@@ -117,7 +117,7 @@
                     </div>
                     <span class="nav-link-text ms-1">Sign Up</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </aside>

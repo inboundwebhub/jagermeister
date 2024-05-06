@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class prize_user extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'prize_type',
+        'prize_number',
+        'assigned',
+        'confirmed',
+    ];
 }

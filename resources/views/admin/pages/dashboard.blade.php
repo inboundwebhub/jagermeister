@@ -10,13 +10,13 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total user's</p>
                                     <h5 class="font-weight-bolder">
-                                        $53,000
+                                        {{$userCount}}
                                     </h5>
                                     <p class="mb-0">
-                                        <span class="text-success text-sm font-weight-bolder">+55%</span>
-                                        since yesterday
+                                        {{-- <span class="text-success text-sm font-weight-bolder">+55%</span> --}}
+                                        {{-- since yesterday --}}
                                     </p>
                                 </div>
                             </div>
@@ -35,13 +35,13 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Users</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Prize</p>
                                     <h5 class="font-weight-bolder">
-                                        2,300
+                                        {{$prizeCount}}
                                     </h5>
                                     <p class="mb-0">
-                                        <span class="text-success text-sm font-weight-bolder">+3%</span>
-                                        since last week
+                                        {{-- <span class="text-success text-sm font-weight-bolder">+3%</span>
+                                        since last week --}}
                                     </p>
                                 </div>
                             </div>
@@ -60,13 +60,13 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">New Clients</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total live prize</p>
                                     <h5 class="font-weight-bolder">
-                                        +3,462
+                                        {{$liveprizeCount}}
                                     </h5>
                                     <p class="mb-0">
-                                        <span class="text-danger text-sm font-weight-bolder">-2%</span>
-                                        since last quarter
+                                        {{-- <span class="text-danger text-sm font-weight-bolder">-2%</span>
+                                        since last quarter --}}
                                     </p>
                                 </div>
                             </div>
@@ -85,12 +85,12 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Sales</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">prize to user</p>
                                     <h5 class="font-weight-bolder">
-                                        $103,430
+                                        {{$prizeuserCount}}
                                     </h5>
                                     <p class="mb-0">
-                                        <span class="text-success text-sm font-weight-bolder">+5%</span> than last month
+                                        {{-- <span class="text-success text-sm font-weight-bolder">+5%</span> than last month --}}
                                     </p>
                                 </div>
                             </div>

@@ -21,6 +21,7 @@
      <!-- end container-fluid -->
 </div>
 <script src="{{ asset('assets/js/script.js') }}"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"  referrerpolicy="no-referrer"></script>
 <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"  referrerpolicy="no-referrer"></script>
 <script src="{{ asset('assets/js/jquery.validate.min.js') }}"  referrerpolicy="no-referrer"></script>
  @stack('script-lib')

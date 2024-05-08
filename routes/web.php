@@ -19,7 +19,10 @@ Route::get('/', function () {
 });
 Route::namespace('App\Http\Controllers')->group(function () {
 	Route::post('/add-user', 'UserController@addUser')->name('adduser');
-	Route::get('/play-game', 'UserController@playGame')->name('playgame');
+	Route::get('/playgame', 'UserController@playGame')->name('playgame');
+    // Route::resource('/game', 'siteController')->only(['index', 'update', 'edit', 'destroy']);
+Route::get('/initial', 'siteController@initial')->name('initial');
+
 });
 
 

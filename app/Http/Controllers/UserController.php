@@ -16,9 +16,9 @@ class UserController extends Controller
     public function addUser(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'first_name' => 'required|string',
-            'last_name' => 'required|string',
-            'email' => 'required|email',
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users,email',  
         ]);
 
         // If validation fails, return with validation errors
@@ -27,19 +27,19 @@ class UserController extends Controller
         }
         $params = $request->all();
         $data   = array();
-        $data['name']        = $params['first_name'].' '.$params['last_name'];
+        $data['name']        = $params['firstname'].' '.$params['lastname'];
         $data['email']       = $params['email'];
+        // dd($data);
        
         $User = User::create($data);
         if ( $User ){
-             return redirect()->route('playgame');
+            return redirect()->route('playgame');
         } else {
             return response()->json(['error' => array('failed' =>  __('Something went wrong please try again.') )]);  
         }  
 
     }
-    public function playGame(){
-        $pageTitle = 'Play Game';
-        return view('gameview',compact('pageTitle'));
+    public function playgame(){
+        return view('gameview');
     }
 }

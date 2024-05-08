@@ -1,0 +1,59 @@
+﻿{"frames": [
+
+{
+	"filename": "btn_claim0000",
+	"frame": {"x":633,"y":472,"w":730,"h":196},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":730,"h":196},
+	"sourceSize": {"w":730,"h":196}
+}
+,{
+	"filename": "btn_finish0000",
+	"frame": {"x":633,"y":273,"w":731,"h":197},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":731,"h":197},
+	"sourceSize": {"w":731,"h":197}
+}
+,{
+	"filename": "ingame_goal0000",
+	"frame": {"x":2,"y":273,"w":629,"h":270},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":629,"h":270},
+	"sourceSize": {"w":629,"h":270}
+}
+,{
+	"filename": "ingame_missed0000",
+	"frame": {"x":2,"y":2,"w":750,"h":269},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":750,"h":269},
+	"sourceSize": {"w":750,"h":269}
+}
+,{
+	"filename": "ingame_saved0000",
+	"frame": {"x":754,"y":2,"w":715,"h":269},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":715,"h":269},
+	"sourceSize": {"w":715,"h":269}
+}
+,{
+	"filename": "txtFlickTheBall0000",
+	"frame": {"x":2,"y":670,"w":750,"h":161},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":750,"h":161},
+	"sourceSize": {"w":750,"h":161}
+}],
+"meta": {
+	"app": "Adobe Animate",
+	"version": "21.0.8.42666",
+	"image": "PhaserTexture.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":1024},
+	"scale": "1"
+}
+}

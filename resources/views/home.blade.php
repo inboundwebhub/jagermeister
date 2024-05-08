@@ -2,214 +2,235 @@
 
 @section('content')
 
-<style type="text/css">
-    body {
-        background-image: url("{{ asset('assets/images/background.png') }}") ;
-    }
-    .site_logo {
-        width: 250px;
-    }
-    .center-checkbox {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-    }
-    .site-btn {
-        background-color: #dd5a12;
-        border-color: #dd5a12;
-        padding: 12px 100px;
-        font-weight: bold;
-    }
-    .site-btn.disabled, .site-btn:disabled {
-        pointer-events: none;
-        background-color: #223f2e;
-        border-color: #223f2e;
-        opacity: 0.7;
-    }
-    .custom_box-border {
-        border: 2px solid #dd5a12;
-        border-radius: 15px;
-    }
-    a {
-        color: #dd5a12;
-        text-decoration: none;
-        transition: all 0.4s ease-in-out;
-        -moz-transition: all 0.4s ease-in-out;
-        -webkit-transition: all 0.4s ease-in-out;
-        -o-transition: all 0.4s ease-in-out;
-    }
-    .custom-control {
-        color:#fff;
-        background-color: transparent;
-        border: 2px solid #fff;
-        height: 60px;
-    }
-   .custom-control::placeholder {
-        color: #fff; /* Change the color here */
-    }
-    .details_form_buttom_section {
-        background-color: #e9e3c7;
-        border-radius: 15px;
-    } 
-    .text-green {
-        color: #0D2B20;
-    } 
-        /* Define styles for error state */
-    input.error {
-        border: 1px solid red; /* Change border color to red */
-    }
+<div id="page1" class="page">
 
-    /* Define styles for error messages */
-    label.error {
-        color: red; /* Change text color of error messages to red */
-    }
-
-</style>
-<div class="full_site_bagorund">
-    <div class="container pt-5 pb-5">
-        <div class="row  justify-content-center">
-            <div class="col-md-12 text-center">
-                <img src="{{ asset('assets/images/logo.png') }}" class="site_logo img-fluid">
-            </div>
-            <div class="col-12 col-md-5 {{ (isset($_COOKIE['age_check']) && $_COOKIE['age_check'] !='' ) ? 'd-none' : '' }}" id="form_one_age">
-                <div class="mt-3">
-                    <h1 class="text-uppercase text-center text-white">Score big with jägermeister</h1>
-                </div>
-                <div class="mt-3">
-                    <h5 class="text-uppercase text-center text-white">Score your penalty to win a selection of fantastic prizes including:</h5>
-                </div>
-                <div>
-                    <img src="{{ asset('assets/images/group_img.png') }}" class="img-fluid">
-                </div>
-                <div class="p-3 custom_box-border">
-                    <div class="mb-3 form-check text-uppercase center-checkbox">
-                        <input type="checkbox" class="form-check-input " id="ageconfirm">
-                        <label class="form-check-label text-white ms-2 age_confirm" for="ageconfirm">I AM OLD ENOUGH</label>
+    <div class="preloader">
+        <div class="page-tow-bg">
+            <div class="header fullwidth">
+                <div class="wrapper">
+                    <div class="head-inn fullwidth text-center">
+                        <a href="https://www.jagershop.co.uk">
+                            <img src="{{ asset('assets/image/logo.svg') }}" alt="">
+                        </a>
                     </div>
-                    <div class="mt-4">
-                        <button type="submit" class="btn btn-primary site-btn w-100 shadow " id="check_age" disabled>ENTER</button>
-                    </div>
-                   
-                    <div class="h5 text-white text-uppercase text-center mt-3">Terms and conditions apply</div>
-                    <p class="text-white text-uppercase text-center">Visit <a>jgr.ms/footballtandc</a> for details</p>
-                </div>
-                <div class="mt-3 text-center">
-                    <img src="{{ asset('assets/images/jm_img.png') }}" class="img-fluid jm_img">
                 </div>
             </div>
-            <div class="clearfix"></div>
-            <div class="col-12 col-md-5 {{ (isset($_COOKIE['age_check']) && $_COOKIE['age_check'] !='' ) ? '' : 'd-none' }}" id="form_two_details">
-                @include('includes.form_error');
-                <div class="mt-3">
-                    <h1 class="text-uppercase text-center text-white">Enter your details</h1>
+            <div class="loading-sec fullwidth">
+                <div class="wrapper">
+                    <div class="lading-main">
+                        <h1>Loading</h1>
+                    </div>
+                    <div class="progressBarcontainer">
+                        <div class="progressBarValue ht"></div>
+                    </div>
                 </div>
-                <div class="mt-3">
-                    <h5 class="text-uppercase text-center text-white">To get your name on the team sheet, enter the following details.</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-tow-bg fullwidth">
+        <div class="header fullwidth">
+            <div class="wrapper">
+                <div class="head-inn fullwidth text-center">
+                    <a href="https://www.jagershop.co.uk">
+                        <img src="{{ asset('assets/image/logo.svg') }}" alt="" />
+                    </a>
                 </div>
-                
-                <div>
-                    <form method="POST" action="{{ route('adduser') }}" id="add_user_code">
-                         @csrf
-                        <div class="row g-3">
-                          <div class="col-md-6 mb-3">
-                            <input type="text" class="form-control custom-control" name="first_name" id="first_name" placeholder="First name" aria-label="First name">
-                          </div>
-                          <div class="col-md-6 mb-3">
-                            <input type="text" class="form-control custom-control" name="last_name" id="last_name" placeholder="Last name" aria-label="Last name">
-                          </div>
-                          <div class="col-md-12 mb-3">
-                            <input type="email" class="form-control custom-control" name="email" id="email" placeholder="Email Address" aria-label="First name">
-                          </div>
+            </div>
+        </div>
+
+        <div class="hero-sec fullwidth">
+            <div class="wrapper">
+                <div class="heading-text">
+                    <h1>Score big with jägermeister</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="prize-sec fullwidth">
+            <div class="wrapper">
+                <div class="prize-main fullwidth">
+                    <div class="prize-title">
+                        <h6>
+                            Score your penalty to win a selection of fantastic prizes
+                            including:
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="ticket-image">
+      <img src="./image/ticket-image.png" alt="">
+  </div> -->
+
+        <div class="prize-col fullwidth">
+            <div class="wrapper">
+                <div class="prize-col-main">
+                    <div class="prize-box">
+                        <div class="prize-image">
+                            <img src="{{ asset('assets/image/Group129.png') }}" alt="" />
                         </div>
-                        <div class="mt-4">
-                            <button type="submit" class="btn btn-primary site-btn w-100 shadow">SETP UP AND TAKE YOUR SHOT</button>
+                        <div class="prize-content">
+                            <h5>Prize 1</h5>
+                            <div class="prize-col-text">
+                                <p>3 Pairs of football tickets</p>
+                            </div>
                         </div>
+                    </div>
+                    <div class="prize-box">
+                        <div class="prize-image">
+                            <img src="{{ asset('assets/image/shirts.png') }}" alt="" />
+                        </div>
+                        <div class="prize-content">
+                            <h5>Prize 2</h5>
+                            <div class="prize-col-text">
+                                <p>200 Jägermeister football shirts</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prize-box">
+                        <div class="prize-image">
+                            <img src="{{ asset('assets/image/scarf1.png') }}" alt="" />
+                        </div>
+                        <div class="prize-content">
+                            <h5>Prize 3</h5>
+                            <div class="prize-col-text">
+                                <p>100 Jägermeister football scarves</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="terms-sec fullwidth">
+            <div class="wrapper">
+                <div class="terms-main">
+                    <form>
+                        <div class="checkbox">
+                            <label for="enough">
+                                <input type="checkbox" id="enough" name="" value="enter" />
+                                <span class="checkmark"></span>
+                                I am old enough
+                            </label>
+                        </div>
+                        <button id="myButton" class="btn nextButton1" disabled>enter</button>
                     </form>
-                    <div class="details_form_buttom_section p-3 mt-3">
-                        <div class="row">
-                            <div class="col-auto">
-                                <img src="{{ asset('assets/images/Layer_1.png') }}" class="img-fluid">
-                            </div>
-                            <div class="col">
-                                <div class="h5 text-green text-uppercase">keep your proof of purchase</div>
-                                 <p class="text-green ">To claim your prize you must have proof of receipt.</p>
-                            </div>
-                        </div>
+                    <div class="terms-text">
+                        <p>
+                            Terms and conditions apply
+                            <span>Visit <a href="#">jgr.ms/footballtandc</a> for details</span>
+                        </p>
                     </div>
-                    <div class="h5 text-white text-uppercase text-center mt-3">Having issues? Please contact:</div>
-                    <p class="text-white text-uppercase text-center"><a href="mailto:marketing@jaegermeister.co.uk">marketing@jaegermeister.co.uk</a></p>
                 </div>
-               
+            </div>
+        </div>
+
+        <div class="footer fullwidth">
+            <div class="wrapper">
+                <div class="footer-logo">
+                    <img src="{{ asset('assets/image/footer-logo.svg') }}" alt="" />
+                </div>
             </div>
         </div>
     </div>
 </div>
-<h1 clas="text-white">hello</h1>
-@php
+<!-- 
+<div id="page2" class="page">
+    <div class="details-page-bg fullwidth">
+        <div class="fix-content">
+            <div class="header fullwidth">
+                <div class="wrapper">
+                    <div class="head-inn fullwidth text-center">
+                        <a href="https://www.jagershop.co.uk">
+                            <img src="{{ asset('assets/image/logo.svg') }}" alt="" />
 
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-@endphp
+            <div class="hero-sec fullwidth">
+                <div class="wrapper">
+                    <div class="heading-text details">
+                        <h1>Enter details</span></h1>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="prize-sec fullwidth">
+                <div class="wrapper">
+                    <div class="prize-main fullwidth">
+                        <div class="prize-title">
+                            <h6>Play the penalt lorem ipsum os et accus amus et iusto odio dign. </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details-sec fullwidth">
+                <div class="wrapper">
+                    <div class="details-main sec-center">
+                        <div class="details-form">
+                            <form>
+                                <div class="form-two-col">
+                                    <div class="form-left-col">
+                                        <input type="text" placeholder="First Name">
+                                    </div>
+                                    <div class="form-left-col">
+                                        <input type="text" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="form-one-col">
+                                    <input type="email" placeholder="Email Address" required>
+                                    <ul class="no-list hs-error-msgs inputs-list" role="alert">
+                                        <li>
+                                            <label class="hs-error-msg hs-main-font-element">
+                                                <i class="fa fa-exclamation-circle"></i>Please enter a valid email address
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="details-btn">Submit and take penalty</button>
+                            </form>
+                        </div>
+
+                        <div class="claim-box-main">
+                            <div class="claim-box">
+                                <div class="claim-image">
+                                    <img src="{{ asset('assets/image/claim-image.png') }}" alt="">
+                                </div>
+                                <div class="claim-details">
+                                    <h6>keep your proof of purchase</h6>
+                                    <div class="claim-txt">
+                                        <p>To claim your prize you must lorem ipsum doloit sit amet dolores a lestrud magna.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div> -->
 
 @endsection
-@section('js')
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-        
-    $('#ageconfirm').change(function(){
-        if(this.checked){
-            // Set the expiration time to 30 days from now
-            var date = new Date();
-            date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
-            var expires = "expires=" + date.toUTCString();
+<!-- 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(".page").hide();
+    $("#page1").show();
+    jQuery(document).on('click', '#myButton', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        $('#page2').addClass('d-none');
+        $('#page1').removeClass('d-none');
 
-            document.cookie = "{{ 'age_check' }}" + "=" + "{{ '1' }}" + "; " + expires + "; path=/;";
-            // Set the cookie
-            $('#check_age').prop('disabled', false); 
-        } else {
-             var date = new Date();
-            date.setTime(date.getTime() - (30 * 24 * 60 * 60 * 1000));
-            var expires = "expires=" + date.toUTCString();
-             document.cookie = "{{ 'age_check' }}" + "=" + "{{ '1' }}" + "; " + expires + "; path=/;";
-           $('#check_age').prop('disabled', true);
-
-        }
     });
-    jQuery(document).on('click', '#check_age', function(event) {
-         event.preventDefault();
-         /* Act on the event */
-         $('#form_one_age').addClass('d-none');
-         $('#form_two_details').removeClass('d-none');
-        
-    });
-    $('#add_user_code').validate({ // initialize the plugin on the form
-        rules: { // define rules for validation
-            first_name: {
-                required: true, // first name is required
-            },
-            last_name: {
-                required: true, // last name is required
-            },
-            email: {
-                required: true, // email is required
-                email: true // email must be in valid format
-            }
-        },
-        messages: { // define custom error messages
-            first_name: {
-                required: "Please enter your first name",
-            },
-            last_name: {
-                required: "Please enter your last name",
-            },
-            email: {
-                required: "Please provide an email address",
-                email: "Please enter a valid email address"
-            }
-        }
-    });
-});
-</script>
-
-
-@endsection
+</script> -->

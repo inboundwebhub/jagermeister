@@ -1,33 +1,71 @@
 $(document).ready(function () {
-    $('#enough').click(function () {
-      $('#myButton').prop("disabled", !$("#enough").prop("checked")); 
-    });
+  $('#enough').click(function () {
+    $('#myButton').prop("disabled", !$("#enough").prop("checked")); 
+  });
 
-    $('.click-box').click(function(){
-      $(this).addClass('c-code'); 
-      
-      setTimeout(function() {
-        $('.click-box').removeClass('c-code'); 
-        }, 1000);
+  $('.click-box').click(function(){
+    $(this).addClass('c-code'); 
+    
+    setTimeout(function() {
+      $('.click-box').removeClass('c-code'); 
+      }, 1000);
 
-    });
+  });
 
 });
 
-  function copyToClipboard(element) {
-    var $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val($(element).text()).select();
-    document.execCommand("copy");
-    $temp.remove();
+// preloader
+// $(window).on("load", function () {
+//   var preloader = $(".preloader");
+//   preloader.fadeOut(2000);
+// });
+
+// preloader
+$(window).on("load",function(){ 
+  setTimeout( function()  { 
+    $(".preloader").fadeOut("slow"); }
+    , 1500); 
+  });
+
+
+// progress-bar 
+var skills = {
+ht: 100
+};
+
+$.each(skills, function(key, value) {
+var skillbar = $("." + key);
+
+skillbar.animate(
+  {
+    width: value + "%"
+  },
+  1500,
+  function() {
+    $(".speech-bubble").fadeIn();
   }
+);
+}); 
+
+// copy-code
+
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
 
 
- 
 
 
 
-  
 
 
-  
+
+
+
+
+
+

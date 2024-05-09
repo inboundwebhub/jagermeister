@@ -15,14 +15,18 @@ use Illuminate\Support\Facades\Artisan;
 */
 
 Route::get('/', function () {
-    return view('home');
-});
+    $pageTitle = 'Home page';
+    return view('home',compact('pageTitle'));
+})->name('home')->middleware('palygame');
 Route::namespace('App\Http\Controllers')->group(function () {
 	Route::post('/add-user', 'UserController@addUser')->name('adduser');
-	Route::get('/playgame', 'UserController@playGame')->name('playgame');
+	Route::get('/playgame', 'UserController@playGame')->name('playgame')->middleware('palygamenot');
     // Route::resource('/game', 'siteController')->only(['index', 'update', 'edit', 'destroy']);
-Route::get('/initial', 'siteController@initial')->name('initial');
-
+    Route::delete('/delete-cookie', 'UserController@delete')->name('delete.cookie');
+    Route::get('/initial', 'siteController@initial')->name('initial')->middleware('palygame');
+    Route::get('/missed', 'siteController@missed')->name('missed')->middleware('palygame');
+    Route::get('/saved', 'siteController@saved')->name('saved')->middleware('palygame');
+    Route::get('/goal', 'siteController@goal')->name('goal')->middleware('palygame');
 });
 
 
@@ -39,27 +43,3 @@ Route::get('/clear-cache', function() {
     return '<h1>Cache facade value cleared</h1>';
 });
 
-//Reoptimized class loader:
-Route::get('/optimize', function() {
-    return '<h1>Reoptimized class loader</h1>';
-});
-
-//Route cache:
-Route::get('/route-cache', function() {
-    return '<h1>Routes cached</h1>';
-});
-
-//Clear Route cache:
-Route::get('/route-clear', function() {
-    return '<h1>Route cache cleared</h1>';
-});
-
-//Clear View cache:
-Route::get('/view-clear', function() {
-    return '<h1>View cache cleared</h1>';
-});
-
-//Clear Config cache:
-Route::get('/config-cache', function() {
-    return '<h1>Clear Config cleared</h1>';
-});

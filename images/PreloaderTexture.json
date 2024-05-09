@@ -1,0 +1,35 @@
+﻿{"frames": [
+
+{
+	"filename": "bar_bg0000",
+	"frame": {"x":376,"y":24,"w":630,"h":21},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":630,"h":21},
+	"sourceSize": {"w":630,"h":21}
+}
+,{
+	"filename": "bar_progress0000",
+	"frame": {"x":376,"y":1,"w":630,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":630,"h":22},
+	"sourceSize": {"w":630,"h":22}
+}
+,{
+	"filename": "logo0000",
+	"frame": {"x":1,"y":1,"w":374,"h":284},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":374,"h":284},
+	"sourceSize": {"w":374,"h":284}
+}],
+"meta": {
+	"app": "Adobe Animate",
+	"version": "21.0.8.42666",
+	"image": "PreloaderTexture.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":512},
+	"scale": "1"
+}
+}

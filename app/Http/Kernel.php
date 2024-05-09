@@ -74,5 +74,8 @@ class Kernel extends HttpKernel
 
         'admin' => \App\Http\Middleware\RedirectIfNotAdmin::class,
         'admin.guest' => \App\Http\Middleware\RedirectIfAdmin::class,
+        
+        'palygamenot' => \App\Http\Middleware\RedirectIfNotPlayGame::class,
+        'palygame' => \App\Http\Middleware\RedirectIfPlayGame::class,
     ];
 }

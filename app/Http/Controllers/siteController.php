@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Prize;
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 
 use Cookie;

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 use App\Models\Prize;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +19,7 @@ class siteController extends Controller
 
     public function missed(Request $request)
     {
-       
+
         /*$cookieName = 'pointtype';
         if ($request->hasCookie($cookieName)) {
 
@@ -30,7 +31,7 @@ class siteController extends Controller
 
     public function saved(Request $request)
     {
-       /* $cookieName = 'pointtype';
+        /* $cookieName = 'pointtype';
         if ($request->hasCookie($cookieName)) {
 
            $cookie = Cookie::queue(Cookie::forget('pointtype'));
@@ -41,7 +42,7 @@ class siteController extends Controller
 
     public function goal(Request $request)
     {
-       /* $cookieName = 'pointtype';
+        /* $cookieName = 'pointtype';
         if ($request->hasCookie($cookieName)) {
             $cookie = cookie()->forget($cookieName);
         }*/
@@ -56,10 +57,10 @@ class siteController extends Controller
 
         if ($prize) {
             // If a prize with the exact generated number is found
-            
-              // Assign the nearest unassigned prize to the user
-                // $user->prize_id = $prize->id;
-                // $user->save();
+
+            // Assign the nearest unassigned prize to the user
+            // $user->prize_id = $prize->id;
+            // $user->save();
 
             print_r("prize");
             $prize->assigned = true;
@@ -103,5 +104,15 @@ class siteController extends Controller
                 return view('voucher');
             }
         }
+    }
+
+    public function scarfForm()
+    {
+        return view('scarfForm');
+    }
+
+    public function tshirtForm()
+    {
+        return view('tshirtform');
     }
 }

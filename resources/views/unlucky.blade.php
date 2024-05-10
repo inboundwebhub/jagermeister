@@ -25,7 +25,7 @@
                             free to explore the</span> <span>Jägermeister shop for more</span>great items. </p>
                 </div>
                 <div class="details-btn close congrates-btn">
-                    <a href="#">Visit the shop</a>
+                    <a href="https://www.jagershop.co.uk/">Visit the shop</a>
                 </div>
                 <div class="terms-text">
                     <p>Terms and conditions apply <span>Visit <a href="#">jgr.ms/footballtandc</a> for

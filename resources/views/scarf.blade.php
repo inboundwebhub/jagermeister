@@ -23,7 +23,7 @@
                         <p>You’ve won a limited edition Jägermeister football scarf for wearing on the terraces!</p>
                     </div>
                     <div class="details-btn close congrates-btn">
-                        <a href="#">claim you prize</a>
+                        <a href="{{route('scarf-form')}}">claim you prize</a>
                     </div>
                     <div class="terms-text">
                         <p>Terms and conditions apply <span>Visit <a href="#">jgr.ms/footballtandc</a> for

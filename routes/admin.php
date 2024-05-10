@@ -27,9 +27,8 @@ Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')-
 		Route::resource('live-prizes', 'LivePrizeController')->only(['index']);
 		Route::resource('prize-user', 'PrizeUserController')->only(['index']);
 		Route::get('/profile', 'UserProfileController@show')->name('profile');
-		Route::post('/profile','UserProfileController@update')->name('profile.update');
-		Route::get('/sign-in-static', 'PageController@signin')->name('sign-in-static');
-		Route::get('/sign-up-static', 'PageController@signup')->name('sign-up-static');
-		// Route::get('/{page}', 'PageController@index')->name('page');
+		Route::post('/profile', 'UserProfileController@update')->name('profile.update');
+		Route::get('/game', 'PageController@gamesetting')->name('game.index');
+		Route::post('/game', 'PageController@GameSettingupdate')->name('game.update');
 	});
 });

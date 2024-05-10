@@ -77,5 +77,7 @@ class Kernel extends HttpKernel
         
         'palygamenot' => \App\Http\Middleware\RedirectIfNotPlayGame::class,
         'palygame' => \App\Http\Middleware\RedirectIfPlayGame::class,
+        
+        'gamestop' => \App\Http\Middleware\GameStop::class,
     ];
 }

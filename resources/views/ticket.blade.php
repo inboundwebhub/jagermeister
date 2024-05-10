@@ -23,7 +23,7 @@
                     <p>You’ve won tickets to watch an <span>English football team of your</span> choice, GET IN!</p>
                 </div>
                 <div class="details-btn close congrates-btn">
-                    <a href="#">claim you prize</a>
+                <a href="{{ route('ticketform') }}">claim you prize</a>
                 </div>
                 <div class="terms-text">
                     <p>Terms and conditions apply <span>Visit <a href="#">jgr.ms/footballtandc</a> for

@@ -20,23 +20,23 @@ class siteController extends Controller
     public function missed(Request $request)
     {
 
-        $cookieName = 'pointtype';
+        /*$cookieName = 'pointtype';
         if ($request->hasCookie($cookieName)) {
 
           $cookie = Cookie::queue(Cookie::forget('pointtype'));
         }
-
+*/
         return view('unlucky');
     }
 
     public function saved(Request $request)
     {
-         $cookieName = 'pointtype';
+        /* $cookieName = 'pointtype';
         if ($request->hasCookie($cookieName)) {
 
            $cookie = Cookie::queue(Cookie::forget('pointtype'));
 
-        }
+        }*/
         return view('unlucky');
     }
 
@@ -116,9 +116,8 @@ class siteController extends Controller
         return view('tshirtform');
     }
 
-    public function close()
+    public function ticketForm()
     {
-
-        return view('gameclose');
+        return view('ticketForm');
     }
 }

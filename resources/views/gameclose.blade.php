@@ -23,6 +23,7 @@
             <div class="prize-main fullwidth">
                 <div class="prize-title close">
                     <h6>Make sure to follow us on social <span>media and stay tuned for thrilling</span> <span>upcoming competitions and exclusive</span>  events with Jägermeister!</h6>
+                    
                 </div>
             </div>
         </div>

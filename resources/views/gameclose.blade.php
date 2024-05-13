@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="details-btn close">
-                    <a href="#">Visit the shop</a>
+                    <a href="https://www.jagershop.co.uk/">Visit the shop</a>
                 </div>
             </div>
         </div>

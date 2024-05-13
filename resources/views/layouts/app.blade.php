@@ -40,9 +40,34 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-     @stack('style-lib')
+    @stack('style-lib')
+    @stack('style')
+    @stack('script-lib')
 </head>
-<body>   
+<body>
+<div class="preloader" id="page-preloader">
+    <div class="page-tow-bg">
+        <div class="header fullwidth">
+            <div class="wrapper">
+                <div class="head-inn fullwidth text-center">
+                    <a href="https://www.jagershop.co.uk">
+                        <img src="{{ asset('assets/image/logo.svg') }}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="loading-sec fullwidth">
+            <div class="wrapper">
+                <div class="lading-main">
+                    <h1>Loading</h1>
+                </div>
+                <div class="progressBarcontainer">
+                    <div class="progressBarValue ht"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
 <div>
     @yield('content')
 </div>
@@ -51,7 +76,7 @@
 <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"  referrerpolicy="no-referrer"></script>
 <script src="{{ asset('assets/js/jquery.validate.min.js') }}"  referrerpolicy="no-referrer"></script>
 @yield('js')
-@stack('script-lib')
+
 </body>
 </html>
 

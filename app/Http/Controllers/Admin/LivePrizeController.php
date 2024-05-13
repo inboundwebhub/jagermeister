@@ -15,7 +15,6 @@ class LivePrizeController extends Controller
         $livePrizes = Prize::whereNotNull('id')
             ->whereNotNull('prize_number')
             ->whereNotNull('prize_type')
-            ->whereNotNull('assigned')
             ->get();
 
         return view('admin.live_prizes.index', compact('livePrizes'));

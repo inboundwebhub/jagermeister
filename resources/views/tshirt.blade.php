@@ -23,7 +23,7 @@
                         football shirt.</p>
                 </div>
                 <div class="details-btn close congrates-btn">
-                    <a href="{{ route('tshirtform') }}">claim you prize</a>
+                    <a href="{{ route('add-detail') }}">claim you prize</a>
                 </div>
                 <div class="terms-text">
                     <p>Terms and conditions apply <span>Visit <a href="#">jgr.ms/footballtandc</a> for

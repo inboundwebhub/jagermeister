@@ -28,11 +28,14 @@ Route::namespace('App\Http\Controllers')->middleware('gamestop')->group(function
     Route::get('/ticketform', 'siteController@ticketForm')->name('ticketform');
     Route::post('/add-user', 'UserController@addUser')->name('adduser');
     Route::get('/scarf-form', 'siteController@scarfForm')->name('scarf-form');
-    Route::get('/tshirt-form', 'siteController@tshirtForm')->name('tshirt-form');
-    Route::post('/add-detail', 'UserController@addDetail')->name('add-detail');
-      Route::get('/close', 'siteController@close')->name('close');
+    Route::get('/add-detail', 'siteController@AddDetailData')->name('add-detail');
+    Route::post('/add-detail', 'siteController@addDetail')->name('add-detail');
+    Route::get('/close', 'siteController@close')->name('close');
     // Apply middleware to routes requiring it
     Route::get('/playgame', 'UserController@playGame')->name('playgame')->middleware('palygamenot');
+    Route::get('/vouchers', 'siteController@voucher')->name('vouchers');
+    Route::post('/uploadproof', 'siteController@uploadProof')->name('upload.proof');
+    Route::get('/thank-you', 'siteController@ThankYou')->name('thankyou');
     Route::middleware('palygame')->group(function () {
         Route::get('/initial', 'siteController@initial')->name('initial');
         Route::get('/missed', 'siteController@missed')->name('missed');

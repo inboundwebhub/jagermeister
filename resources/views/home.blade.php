@@ -4,29 +4,7 @@
 
 <div id="page1" class="page">
 
-    <div class="preloader">
-        <div class="page-tow-bg">
-            <div class="header fullwidth">
-                <div class="wrapper">
-                    <div class="head-inn fullwidth text-center">
-                        <a href="https://www.jagershop.co.uk">
-                            <img src="{{ asset('assets/image/logo.svg') }}" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="loading-sec fullwidth">
-                <div class="wrapper">
-                    <div class="lading-main">
-                        <h1>Loading</h1>
-                    </div>
-                    <div class="progressBarcontainer">
-                        <div class="progressBarValue ht"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     <div class="page-tow-bg fullwidth">
         <div class="header fullwidth">
@@ -61,8 +39,8 @@
         </div>
 
         <!-- <div class="ticket-image">
-      <img src="./image/ticket-image.png" alt="">
-  </div> -->
+          <img src="./image/ticket-image.png" alt="">
+        </div> -->
 
         <div class="prize-col fullwidth">
             <div class="wrapper">

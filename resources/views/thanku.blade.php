@@ -7,7 +7,7 @@
         <div class="wrapper">
             <div class="head-inn fullwidth text-center">
                 <a href="https://www.jagershop.co.uk">
-                    <img src="image/logo.svg" alt="">
+                   <img src="{{ asset('assets/image/logo.svg') }}" alt="">
                 </a>
             </div>
         </div>

@@ -24,7 +24,7 @@
                 <p>You’ve won £5 off your next order <span>at the Jägermeister shop.</span></p>
             </div>
             <div class="details-btn close congrates-btn">
-                <a href="#">Claim your voucher</a>
+                <a href="{{route('vouchers')}}">Claim your voucher</a>
             </div>
             <div class="terms-text">
                 <p>Terms and conditions apply <span>Visit <a href="#">jgr.ms/footballtandc</a> for

@@ -21,12 +21,9 @@ $(document).ready(function () {
 // });
 
 // preloader
-$(window).on("load",function(){ 
-  setTimeout( function()  { 
-    $(".preloader").fadeOut("slow"); }
-    , 1500); 
-  });
-
+jQuery(window).on('load', function() {
+    preloader();
+});
 
 // progress-bar 
 var skills = {
@@ -58,14 +55,7 @@ function copyToClipboard(element) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
+function preloader(){
+  var preloader = $("#page-preloader");
+  preloader.fadeOut('fast');
+}

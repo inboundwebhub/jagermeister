@@ -25,12 +25,10 @@ class PageController extends Controller
      public function GameSettingupdate(Request $request)
     {
        
-        
         $general = gs();
         $general->game_setting = $request->game_setting ?? 0;
         $general->save();
-       
-        $notify[] = ['success', 'General setting updated successfully'];
-        return back()->withNotify($notify);
+        toastr()->success('General setting updated successfully');
+        return back();
     }
 }

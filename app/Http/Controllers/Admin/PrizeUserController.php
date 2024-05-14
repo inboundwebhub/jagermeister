@@ -11,6 +11,7 @@ class PrizeUserController extends Controller
     {
         $users = User::whereNotNull('id')
         ->whereNotNull('prize_id')
+        ->orwhereNotNull('voucher_id')
         ->get();
     // dd($Users);
         return view('admin.prize_user.index',compact('users'));

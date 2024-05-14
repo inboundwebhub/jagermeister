@@ -38,7 +38,7 @@
                 <div class="details-main sec-center">
                     <div class="details-form">
                         <form method="POST" action="{{ route('adduser') }}" id="add_user_code">
-                            @csrf
+                           {{ csrf_field() }}
                             <div class="form-two-col">
                                 <div class="form-left-col">
                                     <input type="text" placeholder="First Name" name="firstname">

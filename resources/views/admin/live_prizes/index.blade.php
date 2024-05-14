@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    @include('admin.layouts.navbars.auth.topnav', ['title' => 'live_Prize'])
+    @include('admin.layouts.navbars.auth.topnav', ['title' => 'live Prize'])
     <div class="row mt-4 mx-4">
         <div class="col-xxl-15">
             <div id="alert">
@@ -39,44 +39,43 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($livePrizes as $key => $prize)
+                                @foreach ($combinedData as $key => $data)
                                 <tr>
                                     <td class="align-middle text-center ">
-
                                         <div class="d-flex align-items-center justify-content-center text-center px-3 py-1">
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">{{ $prize->id }}</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    
-                                    <td class="align-middle text-center ">
-                                        <div class="d-flex align-items-center justify-content-center text-center px-3 py-1">
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">{{ $prize->prize_type }}</h6>
+                                                @if ($data instanceof App\Models\Prize)
+                                                    <h6 class="mb-0 text-sm">{{ $data->id }}</h6>
+                                                @endif
                                             </div>
                                         </div>
                                     </td>
                                     <td class="align-middle text-center ">
-
                                         <div class="d-flex align-items-center justify-content-center text-center px-3 py-1">
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">{{ $prize->prize_number }}</h6>
+                                                <h6 class="mb-0 text-sm">{{ $data->prize_type }}</h6>
                                             </div>
                                         </div>
-                                        
                                     </td>
                                     <td class="align-middle text-center ">
                                         <div class="d-flex align-items-center justify-content-center text-center px-3 py-1">
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">{{ $prize->assigned }}</h6>
+                                                <h6 class="mb-0 text-sm">{{ $data->prize_number }}</h6>
                                             </div>
-                                        </div>                                        
+                                        </div>
                                     </td>
-                                   
-                                    
+                                    <td class="align-middle text-center ">
+                                        <div class="d-flex align-items-center justify-content-center text-center px-3 py-1">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                @if ($data instanceof App\Models\Prize)
+                                                    <h6 class="mb-0 text-sm">{{ $data->assigned }}</h6>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
                                 @endforeach
+                                
 
                             
                             </tbody>

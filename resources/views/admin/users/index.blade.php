@@ -13,6 +13,8 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
+                                    <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+
                                     <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
 
                                     <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
@@ -32,6 +34,9 @@
                             <tbody>
                                 @foreach ($data as $key => $user)
                                 <tr>
+                                    <td class="align-middle text-center text-sm">
+                                        <p class="text-sm font-weight-bold mb-0">{{$user->id}}</p>
+                                    </td>
                                     <td>
                                         <div class="d-flex px-3 py-1">
                                             <div>

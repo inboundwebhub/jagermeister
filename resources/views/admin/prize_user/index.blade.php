@@ -53,7 +53,12 @@
                                     <td class="align-middle text-center ">
                                         <div class="d-flex align-items-center justify-content-center text-center px-3 py-1">
                                             <div class="d-flex flex-column justify-content-center">
+                                                @if(isset( $user->prize_id) &&  $user->prize_id !="")
                                                 <h6 class="mb-0 text-sm">{{ $user->prize->prize_type}}</h6>
+                                                @endif
+                                                 @if(isset( $user->voucher_id) &&  $user->voucher_id !="")
+                                                <h6 class="mb-0 text-sm">{{ 'Voucher' }}</h6>
+                                                @endif 
                                             </div>
                                         </div>
                                     </td>
@@ -69,7 +74,10 @@
                                     <td class="align-middle text-center ">
                                         <div class="d-flex align-items-center justify-content-center text-center px-3 py-1">
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">{{ $user->photos }}</h6>
+                                                @if($user->photos !="")
+                                                    <img src="{{ asset('assets/uploads/userproof/'.$user->photos) }}" width="100" height="100">
+                                                @endif
+                                                
                                             </div>
                                         </div>                                        
                                     </td>

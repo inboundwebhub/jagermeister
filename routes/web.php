@@ -47,10 +47,7 @@ Route::namespace('App\Http\Controllers')->middleware('gamestop')->group(function
 //Clear Cache facade value:
 Route::get('/clear-cache', function () {
     $exitCode = Artisan::call('cache:clear');
-    $exitCode = Artisan::call('optimize');
-    $exitCode = Artisan::call('route:cache');
-    $exitCode = Artisan::call('route:clear');
-    $exitCode = Artisan::call('view:clear');
+   
     $exitCode = Artisan::call('config:cache');
     return '<h1>Cache facade value cleared</h1>';
 });

@@ -16,12 +16,13 @@ class UserController extends Controller
 {
     public function addUser(Request $request)
     {
+       
         $validator = Validator::make($request->all(), [
             'firstname' => 'required|max:255',
             'lastname' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users,email',  
         ]);
-
+         
         // If validation fails, return with validation errors
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
